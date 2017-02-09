@@ -1,0 +1,30 @@
+#w480{
+	min-width: 768px;
+	overflow: auto;
+}
+.main .container{
+	width: 768px;
+}
+.nav{
+	width: 100%;
+}
+.nav a{
+	width: 90%;
+	margin: 0 auto;
+	float: none;
+}
+.nav a:nth-child(even){
+		border: 1px solid #4CA652;
+}
+.nav a.en:nth-child(even), .nav a.uk:nth-child(odd){
+	border-top: none;
+	border-bottom: none;
+	border-left: 1px solid #4CA652;
+	border-right: 1px solid #4CA652;
+}
+.work{
+	width: 24%;
+}
+.myContact{
+	width: 50%;
+}

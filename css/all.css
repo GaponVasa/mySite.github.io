@@ -1,0 +1,252 @@
+/* reset css */
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, form, fieldset, blockquote {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th, caption { font-weight: normal; text-align: left; }
+img, fieldset { border: 0; }
+ol { list-style: decimal; }
+ul { list-style:none; }
+a{text-decoration: none;}
+q:before, q:after { content:''; }
+/* end reset */
+/*---------------------------start---------------------------------*/
+html{
+ height:100%;
+ background:#fff;
+}
+body{
+ font:24px/24px Helvetica, Arial, sans-serif;
+ min-height:100%;
+ width: 100%;
+ min-width:1200px;
+ margin: 0 auto;
+ color:#000;
+ background-color: #EAFFEB;
+ overflow: scroll;
+}
+.main .container:before,
+.main .container:after,
+.aboutMe:before,
+.aboutMe:after,
+.str:before,
+.str:after
+/*:before,
+:after*/
+{
+	display: block;
+	clear: both;
+	content: '';
+}
+/*-----------------------------MAIN-------------------------------*/
+.main{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.main .container{
+	width: 1200px;
+	margin: 0 auto;
+	padding: 9% 0 0 0;
+}
+#lang{
+	width: 	80%;
+	padding-top: 1%;
+}
+.lang{
+	float: right;
+	line-height: 34px;
+    margin-right: 1%;
+}
+.main .en{
+	display: block;
+}
+.main .uk{
+	display: none;
+}
+/*--------checkbox--------*/
+.onoffswitch {
+    position: relative; 
+    float: right;
+    width: 70px;
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; 
+    overflow: hidden; 
+    cursor: pointer;
+    border: 2px solid #4CA652; 
+    border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; 
+    width: 200%; 
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; 
+    float: left; 
+    width: 50%; 
+    height: 30px; 
+    padding: 0; 
+    line-height: 30px;
+    font-size: 20px; 
+    color: white; 
+    font-family: Trebuchet, Arial, sans-serif; 
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "En";
+    padding-left: 10px;
+    background-color: #EAFFEB; 
+    color: #A64E4C;
+}
+.onoffswitch-inner:after {
+    content: "Uk";
+    padding-right: 10px;
+    background-color: #EAFFEB; 
+    color: #A64E4C;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; 
+    width: 21px; 
+    margin: 4.5px;
+    background: #EAFFEB;
+    position: absolute; 
+    top: 0; 
+    bottom: 0;
+    right: 36px;
+    border: 2px solid #4CA652; 
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+/*--------------end checkbox-----------------*/
+#welcome{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+#welcome h1{
+	font-size: 120px;
+	line-height: 1.2;
+	color: #A64E4C;
+}
+#welcome p{
+	margin: 10px 20px;
+}
+.nav{
+	width: 100%;
+	overflow: hidden;
+	margin: 20px 0px;
+}
+.nav a{
+	display: block;
+	float: left;
+	width: 33%;
+	border: 1px solid #4CA652;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	text-align: center;
+	color: #4CA2A6;
+	padding: 20px 0px;
+}
+.nav a.en:nth-child(even), .nav a.uk:nth-child(odd){
+	border-left: none;
+	border-right: none;
+}
+.nav a:hover, a.active{
+	background-color: #cee2d3;
+}
+#about, #works, #contact{
+	display: none;
+  	overflow: hidden;
+}
+.aboutMe{
+	width: 90%;
+	margin: 30px auto 0;
+}
+.str{
+	margin: 20px 0;
+}
+.column1{
+	float: left;
+	width: 20%;
+}
+.column1 p{
+	color: #A64E4C;
+	float: left;
+	margin: 10px 0;
+}
+.column2{
+	float: left;
+	width: 80%;
+}
+.column2 p{
+	line-height: 34px;
+	margin: 10px 0;
+}
+.column2 ul{
+	margin-left: 20px;
+}
+.column2 ul li{
+	list-style: disc;
+	margin: 10px 0px 0px 20px;
+}
+/*#works*/
+.work{
+	width: 26%;
+	height: 400px;
+	float: left;
+	border: 1px solid #4CA652;
+	padding: 20px 3%;
+	margin: 20px 20px 20px 0px; 
+}
+div.work:nth-child(3n+3){
+	margin: 20px 0px 20px 0px;
+}
+.work > a{
+	display: inline-block;
+	overflow: hidden;
+	height: inherit;
+	color: #AB4E81;
+}
+.work > a:hover{
+	text-decoration: underline;
+}
+.work > a > p{
+	margin-bottom: 10px;
+}
+.work > a > img{
+	width: 100%;
+}
+/*#contact*/
+.myContact{
+	width: 33%;
+	margin: 0 auto;
+}
+.myContact p{
+	margin: 10px 0px;
+}
+.myContact p span{
+	display: inline-block;
+	margin-left: 20px;
+}

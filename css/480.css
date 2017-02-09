@@ -1,0 +1,55 @@
+#w480{
+	min-width: 480px;
+	overflow: auto;
+}
+.main .container{
+	width: 480px;
+	padding: 0;
+}
+.nav{
+	width: 100%;
+}
+.nav a{
+	width: 90%;
+	margin: 0 auto;
+	float: none;
+}
+.nav a:nth-child(even){
+	border: 1px solid #4CA652;
+}
+.nav a.en:nth-child(even), .nav a.uk:nth-child(odd){
+	border-top: none;
+	border-bottom: none;
+	border-left: 1px solid #4CA652;
+	border-right: 1px solid #4CA652;
+}
+.aboutMe{
+	width: 88%;
+}
+.column1{
+	width: 90%;
+	text-align: center;
+}
+.column2{
+	width: 90%;
+}
+.column2 p{
+	margin: 20px auto;
+}
+.work{
+	width: 90%;
+    padding: 5px;
+    margin: 20px auto;
+    float: none;
+    height: 200px;
+}
+div.work:nth-child(3n+3){
+	margin: 20px auto;
+}
+.work > a{
+	width: 100%;
+	margin: 0 auto;
+}
+.myContact{
+	width: 90%;
+}

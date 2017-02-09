@@ -1,0 +1,435 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="jQuery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){//Дожидаемся загрузки всего документа
+      //----------------------------объявляем функцию для заполнения дивами--------------------
+        var n;
+        var m;
+        var t;
+        function addDiv(n, m, t){
+          for(var j=0;j<n;j++){
+            for(var i=0;i<m;i++){
+              $('<div class="Col1"></div>').appendTo(t);
+              $('<div class="Col2"></div>').appendTo(t);
+            };
+            for(var i=0;i<m;i++){
+              $('<div class="Col2"></div>').appendTo(t);
+              $('<div class="Col1"></div>').appendTo(t);
+            };
+            $('.Col1, .Col2').css({"width":"20px","height":"20px","float":"left"});
+          };
+        };
+      //------------------------------Начало----------------------------------
+			$('.image').on('click', function(){
+				$('#image').slideToggle('slow');
+			});
+			$('.mainpic').on('change',function(){//Добавляем событи, которое отслеживаем, не изменился ли выбранный элемент в селектбоксе мейнпик
+          if($(this).val()!=='none'){
+            $('.mainpicelement').html('<img src=img/'+$(this).val()+'>');//ЗАменим все содержимое соответствующего дива
+          }else{
+            // $('.mainpicelement').empty();//Убирает все внутри .mainpicelement
+            $('.mainpicelement img').remove();//Убирает только img находящийся внутри .mainpicelement
+          };
+     			
+   			});
+   		
+   			$('.width').on('change',function(){//Добавляем событи, которое отслеживаем, не изменился ли выбранный элемент в селектбоксе width
+     			$('.mainpicelement').find('img').css({//Выбрали див, в нем нашли рисунок
+      				"width": $(this).val()+"px"//Рисунку наваляли css свойство ширины из значения текущего инпута, и не забыли к нему прилепить размерность
+     			}); 
+    		});
+   			$('.top').on('change',function(){//Добавляем событи, которое отслеживаем, не изменился ли выбранный элемент в селектбоксе top
+     			$('.mainpicelement').css({//Выбрали див,
+      				"top": $(this).val()+"px"//div наваляли css свойство top из значения текущего инпута, и не забыли к нему прилепить размерность
+     			});     
+    		});
+    		$('.left').on('change',function(){//Добавляем событи, которое отслеживаем, не изменился ли выбранный элемент в селектбоксе left
+     			$('.mainpicelement').css({//Выбрали див,
+      				"left": $(this).val()+"px"//div наваляли css свойство left из значения текущего инпута, и не забыли к нему прилепить размерность
+     			});     
+    		});
+    		// -------------------------ТЕКСТ---------------------
+    		$('.text').on('click', function(){
+    			$('#text').slideToggle('slow');
+    		});
+    		$('.textWr').on('change',function(){//Добавляем событи, которое отслеживаем, не изменился ли выбранный элемент в селектбоксе left
+     			$('.maintext').html('<span>'+$(this).val()+'</span>');
+    		});
+    		
+   			$('.sizeText').on('change',function(){//Добавляем событи, которое отслеживаем, не изменился ли выбранный элемент в селектбоксе width
+     			$('.maintext').find('span').css({//Выбрали див, в нем нашли рисунок
+      				"font-size": $(this).val()+"px"//Рисунку наваляли css свойство ширины из значения текущего инпута, и не забыли к нему прилепить размерность
+     			}); 
+    		});
+   			$('.topText').on('change',function(){//Добавляем событи, которое отслеживаем, не изменился ли выбранный элемент в селектбоксе top
+     			$('span').css({//Выбрали див,
+      				"top": $(this).val()+"px"//div наваляли css свойство top из значения текущего инпута, и не забыли к нему прилепить размерность
+     			});     
+    		});
+   			$('.leftText').on('change',function(){//Добавляем событи, которое отслеживаем, не изменился ли выбранный элемент в селектбоксе left
+     			$('span').css({//Выбрали див,
+      				"left": $(this).val()+"px"//div наваляли css свойство left из значения текущего инпута, и не забыли к нему прилепить размерность
+     			});
+     		});
+
+    		$('input[name=face]').on('change',function(){//Добавляем событи, которое отслеживаем, не изменился ли выбранный элемент в селектбоксе input[name=face]
+     			$('span').css({
+      				"font-family":$(this).val()
+     			});
+    		});
+    		$('.weight').on('change',function(){
+    			$('span').css({"font-weight":$(this).val()
+    			});
+    		});
+    		$('.letter').on('change', function(){
+    			$('span').css({"letter-spacing":$(this).val()+"px"});
+    		});
+    		$('.checkColor').on('click', function(){
+    			$('#checkColor').slideToggle('slow');
+    			$('#writeColor').fadeOut(50);
+    		});
+    		$('.writeColor').on('click', function(){
+    			$('#writeColor').slideToggle('slow');
+    			$('#checkColor').fadeOut(50);
+    		});
+    		$('#checkColor').on('change',function(){
+    			$('span').css({"color":$(this).val()});
+    		});
+    		$('input[name="writeColor"]').on('change',function(){
+          if(!/^[a-fA-F0-9]{6}/.test(jQuery('input[name="writeColor"]').val()))
+          {
+            alert("Цвет некорректен!");
+            $('input[name="writeColor"]').val(' ');
+            return false;
+          }else{
+            $('span').css({"color":"#"+$(this).val()});
+          };
+    		});
+        $('a').on('click',function(){
+         $(this).css({"color":"#CEEA9E", "background-color":"#40600A", "border":"1px solid #68120B"}) ;
+        });
+        //------------------------низ футболки--------------------------
+        $('.bottomRule').on('click', function(){
+          $('#bottomRule').slideToggle('slow');
+        });
+        addDiv(n=2, m=10, t='.bottom');
+        $('#bottomColor').on('change',function(){
+          $('.bottom .Col1').addClass('Clr1');
+          if($(this).val()!=='none'){
+            $('.Clr1').css({"background-color":$(this).val()});
+          }else{
+             $('.Clr1').css({"background-color":"transparent"});
+          };
+        });
+        //------------------------рукава футболки--------------------------
+        $('.sleeve').on('click', function(){
+          $('#sleeve').slideToggle('slow');
+        });
+        addDiv(n=3, m=3, t='.sleeveRight');
+        addDiv(n=3, m=3, t='.sleeveLeft');
+        $('#sleeveColor').on('change',function(){
+          $('.sleeveRight .Col1').addClass('Clr2');
+          $('.sleeveLeft .Col1').addClass('Clr2');
+          if($(this).val()!=='none'){
+            $('.Clr2').css({"background-color":$(this).val()});
+          }else{
+            $('.Clr2').css({"background-color":"transparent"});
+          };
+        });
+		});
+	</script>
+	<style type="text/css">
+	body{
+		font: 16px/16px arial, helvetica, sans-serif;
+		color: #073940;
+	}
+	#wrapper{
+		width: 1120px;
+		margin: 0 auto;
+	}
+	input[type="text"], select{
+		width: 90%;
+		margin: 5px 15px;
+	}
+	nav{
+		float: left;
+		width: 300px;
+		border: 5px inset #7E886E;
+		background-color: #69959B;
+		margin: 40px 2px 0 0;
+	}
+	p{margin: 0;}
+	p.left{		float: left;	}
+	p.right{	float: right;	}
+	p.right, p.left{
+		text-transform: uppercase;
+		font-size: 10px;
+		line-height: 10px;
+	}
+	p.center{
+		text-transform: uppercase;
+		font-size: 14px;
+		line-height: 14px;
+		text-align: center;
+    margin: 5px 0;
+	}
+	input[type="range"]{	width: 100%;	}
+	input[type="radio"]{	margin: 0;	}
+	article{
+		float: left;
+    margin:auto;
+    background:url(img/fotbolka_front.png) no-repeat;
+    width:800px;
+    height:819px;
+    position:relative;
+  }
+	article .wrapArticle>*{
+    top:0;
+    left:0;
+    position:absolute;
+  }
+  .wrapArticle, .maintext{
+   	width: 400px;
+		height: 600px;
+		margin: 0 auto;
+		position: absolute;
+		top: 15%;
+		left: 25%;
+		z-index: 10;
+  }
+  .maintext span{
+   	top:0;
+    left:0;
+    position:absolute;
+  }
+  nav div{	margin-top: 10px;  	}
+  #text div .left{
+    width: 20%;
+   	font-size: 12px;
+   	margin:3px 0 0 15px;
+  }
+  .image, .text, .bottomRule, .sleeve{ font: 20px/20px "trebuchet ms", helvetica, sans-serif; 	}
+  a{
+   	display: block;
+   	text-align: center;
+   	text-transform: uppercase;
+   	text-decoration: none;
+   	color: #40600A;
+   	border: 1px solid #927977;
+   	background-color: #CEEA9E;
+  }
+  a:hover, a:focus{
+		color: #CEEA9E;
+		background-color: #40600A;
+		border: 1px solid #68120B;
+  }
+	#image, #text, #bottomRule, #sleeve{
+		display: none;
+		width: 97%;
+		padding: 3px;
+		margin: 10px 0;
+    overflow: hidden;
+	}
+	.checkColor, .writeColor{
+		width: 49.3%;
+		float: left;
+	}
+	#checkColor, #writeColor, #bottomRule, #sleeve{display: none;}
+  .bottom{
+    width:400px;
+    height:80px;
+    bottom: 7.3%;
+    left: 24.7%;
+    position: absolute;
+    overflow: hidden;
+  }
+  /*.btm1, .btm2{
+    width: 20px;
+    height: 20px;
+    float: left;
+  }*/
+  .sleeveRight, .sleeveLeft{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 35%;
+  }
+  .sleeveRight{ 
+    right: 7%; 
+    -moz-transform: rotate(-18deg);
+    -webkit-transform: rotate(-18deg);
+    -o-transform: rotate(-18deg);
+    -ms-transform: rotate(-18deg); /* для IE9 */
+    transform: rotate(-18deg); /* на будущее */
+  }
+  .sleeveLeft{ 
+    left: 7%;
+    -moz-transform: rotate(18deg);
+    -webkit-transform: rotate(18deg);
+    -o-transform: rotate(18deg);
+    -ms-transform: rotate(18deg); /* для IE9 */
+    transform: rotate(18deg); /* на будущее */  
+  }
+	</style>
+</head>
+<body>
+<div id="wrapper">
+	<nav>
+		<!-- Изображение -->
+		<a href="#" class="image">изображение</a>
+		  <div id="image">
+			 <p class="mainpic center">Выбирите изображение</p>
+  			<select class="mainpic">
+  				
+          <option value="none">Убрать изображение</option>
+   				<option value="star.png">star</option>
+				  <option value="star_1.png">star_1</option>
+				  <option value="square.png">square</option>
+				  <option value="circle_1.png">circle_1</option>
+				  <option value="circle_2.png">circle_2</option>
+				  <option value="stop.png">stop</option>
+				  <option value="stop_1.png">stop_1</option>
+				  <option value="image.png">image</option>
+				  <option value="image_1.png">image_1</option>
+				  <option value="image_2.png">image_2</option>
+				  <option value="image_3.png">image_3</option>
+				  <option value="image_4.png">image_4</option>
+				  <option value="image_5.png">image_5</option>
+				  <option value="image_6.png">image_6</option>
+  			</select>
+        <p class="center">размер изображения</p>
+  			<p class="left">меньше</p>
+  			<p class="right">больше</p>
+  			<input type="range" min="1" max="400" value="200" class="width">
+        <p class="center">Позиционирование изображения</p>
+  			<p class="left">выше</p>
+  			<p class="right">ниже</p>
+  			<input type="range" min="1" max="400" value="180" class="top">
+  			<p class="left">левее</p>
+  			<p class="right">правее</p>
+  			<input type="range" min="1" max="400" value="150" class="left">
+  		</div>
+		<!-- Текст -->
+		<a href="#" class="text">текст</a>
+		<div id="text">
+        <p class="center">Введите текст</p>
+  			<input type="text" class="textWr" placeholder="Введите текст">
+        <p class="center">размер текста</p>
+			 <p class="left">меньше</p>
+  			<p class="right">больше</p>
+  			<input type="range" min="10" max="120" value="50" class="sizeText">
+        <p class="center">Позиционирование текста</p>
+  			<p class="left">выше</p>
+  			<p class="right">ниже</p>
+  			<input type="range" min="1" max="600" value="250" class="topText">
+  			<p class="left">левее</p>
+  			<p class="right">правее</p>
+  			<input type="range" min="1" max="400" value="150" class="leftText">
+		<!-- Выбор шрифта -->
+        <p class="center">Выбор шрифта</p>
+			   <div>
+				  <p class="left">Arial</p>
+				  <input type="radio" name="face" value="Arial" checked="">
+			   </div>
+  			<div>
+  				<p class="left">Tahoma</p>
+  				<input type="radio" name="face" value="Tahoma">
+  			</div>
+  			<div>
+  				<p class="left">Georgia</p>
+  				<input type="radio" name="face" value="Georgia">
+  			</div>
+  			<p class="center">Ширина текста</p>
+  			<p class="left">меньше</p>
+  			<p class="right">больше</p>
+  			<input type="range" min="100" max="900" step="200" value="300" class="weight">
+  			<p class="center">Ширина между символами</p>
+  			<p class="left">меньше</p>
+  			<p class="right">больше</p>
+  			<input type="range" min="1" max="10" step="1" value="1" class="letter">
+  			<p class="center">Цвет текста</p>
+  			<a href="#" class="checkColor">Выбрать цвет</a>
+  			<a href="#" class="writeColor">Ввести цвет</a>
+  			<select id="checkColor">
+  				<option value="#000">Черный</option>
+  				<option value="#00ffff">Голубой</option>
+  				<option value="#0000ff">Синий</option>
+  				<option value="#ff00ff">Фуксия</option>
+  				<option value="#808080">Серый</option>
+  				<option value="#008000">Зеленый</option>
+  				<option value="#00ff00">Светло-зеленый</option>
+  				<option value="#800000">Темно-красный</option>
+  				<option value="#000080">Темно-синий</option>
+  				<option value="#808000">Оливковый</option>
+  				<option value="#800080">Фиолетовый</option>
+  				<option value="#ff0000">Красный</option>
+  				<option value="#c0c0c0">Светло-серый</option>
+  				<option value="#008080">Сине-зеленый</option>
+  				<option value="#ffff00">Желтый</option>
+  			</select>
+			 <div id="writeColor">
+				  <input type="text" name="writeColor" maxlength="6" placeholder="Введите HEX номер цвета, без #.">
+			 </div>	
+  	</div>
+    <a href="#" class="bottomRule">низ футболки</a>
+    <div id="bottomRule">
+      <p class="center">Выбор цвета</p>
+      <select id="bottomColor">
+          <option value="none">Без цвета</option>
+          <option value="#000">Черный</option>
+          <option value="#00ffff">Голубой</option>
+          <option value="#0000ff">Синий</option>
+          <option value="#ff00ff">Фуксия</option>
+          <option value="#808080">Серый</option>
+          <option value="#008000">Зеленый</option>
+          <option value="#00ff00">Светло-зеленый</option>
+          <option value="#800000">Темно-красный</option>
+          <option value="#000080">Темно-синий</option>
+          <option value="#808000">Оливковый</option>
+          <option value="#800080">Фиолетовый</option>
+          <option value="#ff0000">Красный</option>
+          <option value="#c0c0c0">Светло-серый</option>
+          <option value="#008080">Сине-зеленый</option>
+          <option value="#ffff00">Желтый</option>
+        </select>
+    </div>
+    <a href="#" class="sleeve">рукава футболки</a>
+    <div id="sleeve">
+        <p class="center">Выбор цвета</p>
+        <select id="sleeveColor">
+          <option value="none">Без цвета</option>
+          <option value="#000">Черный</option>
+          <option value="#00ffff">Голубой</option>
+          <option value="#0000ff">Синий</option>
+          <option value="#ff00ff">Фуксия</option>
+          <option value="#808080">Серый</option>
+          <option value="#008000">Зеленый</option>
+          <option value="#00ff00">Светло-зеленый</option>
+          <option value="#800000">Темно-красный</option>
+          <option value="#000080">Темно-синий</option>
+          <option value="#808000">Оливковый</option>
+          <option value="#800080">Фиолетовый</option>
+          <option value="#ff0000">Красный</option>
+          <option value="#c0c0c0">Светло-серый</option>
+          <option value="#008080">Сине-зеленый</option>
+          <option value="#ffff00">Желтый</option>
+        </select>
+    </div>
+ 	</nav>
+ 	<article>
+ 		<div class="wrapArticle">
+ 			<div class="mainpicelement"></div>
+ 			<div class="maintext"></div>
+ 		</div>
+    <div class="bottom"></div>
+    <div class="sleeveRight"></div>
+    <div class="sleeveLeft"></div>
+ 	</article>
+</div>
+</body>
+</html>

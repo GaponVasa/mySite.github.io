@@ -1,0 +1,163 @@
+/* reset css */
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, form, fieldset, blockquote {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th, caption { font-weight: normal; text-align: left; }
+img, fieldset { border: 0; }
+ol { list-style: decimal; }
+ul { list-style:none; }
+a{text-decoration: none;}
+q:before, q:after { content:''; }
+/* end reset */
+/*----------------------------Font name-----------------------------*/
+	/*font: px georgia, serif;
+	font: px "times new roman", times, serif;
+	font: px arial, helvetica, sans-serif;
+	font: px tahoma, geneva, sans-serif;
+	font: px "trebuchet ms", helvetica, sans-serif;
+	font: px verdana, geneva, sans-serif;
+	font: px "ms serif", "new york", serif;
+	font: px "arial black", gadget, sans-serif;
+	font: px "lucida sans", unicode, "lucida grande", sans-serif;*/
+@font-face {
+	
+}
+/*---------------------------start---------------------------------*/
+html{
+ height:100%;
+ background:#fff;
+}
+body{
+ font:10px/10px Arial, Helvetica, sans-serif;
+ min-height:100%;
+ min-width: 1200px;
+ width: 1200px;
+ margin: 0 auto;
+ color:#000;
+}
+/*:before,
+:after*/
+/*:before,
+:after*/
+/*{
+	display: block;
+	clear: both;
+	content: '';
+}*/
+
+/*-----------------------------MAIN-------------------------------*/
+.main{
+	width: 100%;
+	margin: 50px auto;
+}
+h1{
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 30px;
+	line-height: 32px;
+	margin: 30px 0 30px;
+}
+form{
+	text-align: center;
+}
+select{
+	font-size: 20px;
+	line-height: 22px;
+	text-transform: uppercase;
+	background-color: #FFF;
+}
+option{color: #fff;}
+option[value="silver"]{
+	background-color:   #C0C0C0;
+}
+option[value="gold"]{
+	background-color:  #FFD700;
+}
+option[value="black"]{
+	background-color: black;
+}
+option[value="brown"]{
+	background-color:  #A52A2A;
+}
+option[value="red"]{
+	background-color:  red;
+}
+option[value="orange"]{
+	background-color:  orange;
+}
+option[value="yellow"]{
+	background-color:  yellow;
+	color: #000;
+}
+option[value="green"]{
+	background-color:  green;
+}
+option[value="blue"]{
+	background-color:  blue;
+}
+option[value="purple"]{
+	background-color:  #800080;
+}
+option[value="gray"]{
+	background-color:  gray;
+}
+option[value="white"]{
+	background-color: #fff;
+	color: #000;
+}
+#resButton{
+	width: 127px;
+	height: 27px;
+	text-transform: uppercase;
+}
+#reult{
+	display: none;
+	border: 3px solid red;
+	width: 300px;
+	height: 150px;
+	margin: 50px auto;
+	font-size: 20px;
+	line-height: 22px;
+}
+#reult h2{
+	font-size: 25px;
+	line-height: 27px;
+	margin: 20px;
+	text-transform: uppercase;
+	text-align: center;
+}
+#reult p{
+	text-align: center;
+}
+table{
+	width: 100%;
+}
+table th{
+	border: 1px solid #000;
+	text-align: center;
+	padding: 2px;
+	width: 100px;
+}
+table td{
+	border: 1px solid #000;
+	text-align: center;
+	padding: 2px;
+	width: 100px;
+}
+
+/*. > ul{	
+	
+}
+. > ul > li{	
+	
+}
+. > ul > li > a{
+	
+}
+. > ul > li > a:hover{	
+
+}*/

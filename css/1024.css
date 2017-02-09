@@ -1,0 +1,20 @@
+#w480{
+	min-width: 1024px;
+	overflow: auto;
+}
+.main .container{
+	width: 1024px;
+}
+.nav{
+	width: 90%;
+	margin: 20px auto;
+}
+.nav a{
+	width: 33%;
+}
+.work{
+	width: 25%;
+}
+.myContact{
+	width: 35%;
+}
