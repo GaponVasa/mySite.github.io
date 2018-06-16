@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>T-shirt</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="wrapper">
+      	<nav>
+          <!-- Изображение -->
+      		<a href="#" class="image">изображение</a>
+      		    <div id="image">
+                    <p class="mainpic center">Выбирите изображение</p>
+        			<select class="mainpic">
+                        <option value="none">Убрать изображение</option>
+             			<option value="star.png">star</option>
+          				<option value="star_1.png">star_1</option>
+          				<option value="square.png">square</option>
+          				<option value="circle_1.png">circle_1</option>
+          				<option value="circle_2.png">circle_2</option>
+          				<option value="stop.png">stop</option>
+          				<option value="stop_1.png">stop_1</option>
+          				<option value="image.png">image</option>
+          				<option value="image_1.png">image_1</option>
+          				<option value="image_2.png">image_2</option>
+          				<option value="image_3.png">image_3</option>
+          				<option value="image_4.png">image_4</option>
+          				<option value="image_5.png">image_5</option>
+          				<option value="image_6.png">image_6</option>
+            		</select>
+                    <p class="center">размер изображения</p>
+            		<p class="left">меньше</p>
+            		<p class="right">больше</p>
+            		<input type="range" min="1" max="400" value="200" class="width">
+                    <p class="center">Позиционирование изображения</p>
+        			<p class="left">выше</p>
+        			<p class="right">ниже</p>
+        			<input type="range" min="1" max="400" value="180" class="top">
+        			<p class="left">левее</p>
+        			<p class="right">правее</p>
+        			<input type="range" min="1" max="400" value="150" class="left">
+        		</div>
+      		    <!-- Текст -->
+      		    <a href="#" class="text">текст</a>
+          		<div id="text">
+                    <p class="center">Введите текст</p>
+            		<input type="text" class="textWr" placeholder="Введите текст">
+                    <p class="center">размер текста</p>
+          			<p class="left">меньше</p>
+            		<p class="right">больше</p>
+            		<input type="range" min="10" max="120" value="50" class="sizeText">
+                    <p class="center">Позиционирование текста</p>
+        			<p class="left">выше</p>
+        			<p class="right">ниже</p>
+        			<input type="range" min="1" max="600" value="250" class="topText">
+        			<p class="left">левее</p>
+        			<p class="right">правее</p>
+        			<input type="range" min="1" max="400" value="150" class="leftText">
+          		    <!-- Выбор шрифта -->
+                    <p class="center">Выбор шрифта</p>
+                    <div>
+          				<p class="left">Arial</p>
+          				<input type="radio" name="face" value="Arial" checked="">
+                    </div>
+            		<div>
+            			<p class="left">Tahoma</p>
+            			<input type="radio" name="face" value="Tahoma">
+            		</div>
+            		<div>
+            			<p class="left">Georgia</p>
+            			<input type="radio" name="face" value="Georgia">
+            		</div>
+        			<p class="center">Ширина текста</p>
+        			<p class="left">меньше</p>
+        			<p class="right">больше</p>
+        			<input type="range" min="100" max="900" step="200" value="300" class="weight">
+        			<p class="center">Ширина между символами</p>
+        			<p class="left">меньше</p>
+        			<p class="right">больше</p>
+        			<input type="range" min="1" max="10" step="1" value="1" class="letter">
+        			<p class="center">Цвет текста</p>
+        			<a href="#" class="checkColor">Выбрать цвет</a>
+        			<a href="#" class="writeColor">Ввести цвет</a>
+        			<select id="checkColor">
+        				<option value="#000">Черный</option>
+        				<option value="#00ffff">Голубой</option>
+        				<option value="#0000ff">Синий</option>
+        				<option value="#ff00ff">Фуксия</option>
+        				<option value="#808080">Серый</option>
+        				<option value="#008000">Зеленый</option>
+        				<option value="#00ff00">Светло-зеленый</option>
+        				<option value="#800000">Темно-красный</option>
+        				<option value="#000080">Темно-синий</option>
+        				<option value="#808000">Оливковый</option>
+        				<option value="#800080">Фиолетовый</option>
+        				<option value="#ff0000">Красный</option>
+        				<option value="#c0c0c0">Светло-серый</option>
+        				<option value="#008080">Сине-зеленый</option>
+        				<option value="#ffff00">Желтый</option>
+        			</select>
+          			 <div id="writeColor">
+          				  <input type="text" name="writeColor" maxlength="6" placeholder="Введите HEX номер цвета, без #.">
+          			 </div>	
+            	</div>
+                <a href="#" class="bottomRule">низ футболки</a>
+                <div id="bottomRule">
+                    <p class="center">Выбор цвета</p>
+                    <select id="bottomColor">
+                        <option value="none">Без цвета</option>
+                        <option value="#000">Черный</option>
+                        <option value="#00ffff">Голубой</option>
+                        <option value="#0000ff">Синий</option>
+                        <option value="#ff00ff">Фуксия</option>
+                        <option value="#808080">Серый</option>
+                        <option value="#008000">Зеленый</option>
+                        <option value="#00ff00">Светло-зеленый</option>
+                        <option value="#800000">Темно-красный</option>
+                        <option value="#000080">Темно-синий</option>
+                        <option value="#808000">Оливковый</option>
+                        <option value="#800080">Фиолетовый</option>
+                        <option value="#ff0000">Красный</option>
+                        <option value="#c0c0c0">Светло-серый</option>
+                        <option value="#008080">Сине-зеленый</option>
+                        <option value="#ffff00">Желтый</option>
+                    </select>
+                </div>
+                <a href="#" class="sleeve">рукава футболки</a>
+                <div id="sleeve">
+                    <p class="center">Выбор цвета</p>
+                    <select id="sleeveColor">
+                        <option value="none">Без цвета</option>
+                        <option value="#000">Черный</option>
+                        <option value="#00ffff">Голубой</option>
+                        <option value="#0000ff">Синий</option>
+                        <option value="#ff00ff">Фуксия</option>
+                        <option value="#808080">Серый</option>
+                        <option value="#008000">Зеленый</option>
+                        <option value="#00ff00">Светло-зеленый</option>
+                        <option value="#800000">Темно-красный</option>
+                        <option value="#000080">Темно-синий</option>
+                        <option value="#808000">Оливковый</option>
+                        <option value="#800080">Фиолетовый</option>
+                        <option value="#ff0000">Красный</option>
+                        <option value="#c0c0c0">Светло-серый</option>
+                        <option value="#008080">Сине-зеленый</option>
+                        <option value="#ffff00">Желтый</option>
+                    </select>
+                </div>
+       	</nav>
+       	<article>
+       		<div class="wrapArticle">
+       			<div class="mainpicelement"></div>
+       			<div class="maintext"></div>
+       		</div>
+            <div class="bottom"></div>
+            <div class="sleeveRight"></div>
+            <div class="sleeveLeft"></div>
+       	</article>
+    </div>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="jQuery/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>

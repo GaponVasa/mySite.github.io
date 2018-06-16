@@ -1,0 +1,127 @@
+
+body{
+	font: 16px/16px arial, helvetica, sans-serif;
+	color: #073940;
+}
+#wrapper{
+	width: 1120px;
+	margin: 0 auto;
+}
+input[type="text"], select{
+	width: 90%;
+	margin: 5px 15px;
+}
+nav{
+	float: left;
+	width: 300px;
+	border: 5px inset #7E886E;
+	background-color: #69959B;
+	margin: 40px 2px 0 0;
+}
+p{margin: 0;}
+p.left{		float: left;	}
+p.right{	float: right;	}
+p.right, p.left{
+	text-transform: uppercase;
+	font-size: 10px;
+	line-height: 10px;
+}
+p.center{
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 14px;
+	text-align: center;
+	margin: 5px 0;
+}
+input[type="range"]{	width: 100%;	}
+input[type="radio"]{	margin: 0;	}
+article{
+	float: left;
+	margin:auto;
+	background:url(../img/fotbolka_front.png) no-repeat;
+	width:800px;
+	height:819px;
+	position:relative;
+}
+article .wrapArticle>*{
+	top:0;
+	left:0;
+	position:absolute;
+}
+.wrapArticle, .maintext{
+	width: 400px;
+	height: 600px;
+	margin: 0 auto;
+	position: absolute;
+	top: 15%;
+	left: 25%;
+	z-index: 10;
+}
+.maintext span{
+	top:0;
+	left:0;
+	position:absolute;
+}
+nav div{	margin-top: 10px;  	}
+#text div .left{
+	width: 20%;
+	font-size: 12px;
+	margin:3px 0 0 15px;
+}
+.image, .text, .bottomRule, .sleeve{ font: 20px/20px "trebuchet ms", helvetica, sans-serif; 	}
+a{
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #40600A;
+	border: 1px solid #927977;
+	background-color: #CEEA9E;
+}
+a:hover, a:focus{
+	color: #CEEA9E;
+	background-color: #40600A;
+	border: 1px solid #68120B;
+}
+#image, #text, #bottomRule, #sleeve{
+	display: none;
+	width: 97%;
+	padding: 3px;
+	margin: 10px 0;
+	overflow: hidden;
+}
+.checkColor, .writeColor{
+	width: 49.3%;
+	float: left;
+}
+#checkColor, #writeColor, #bottomRule, #sleeve{display: none;}
+.bottom{
+	width:400px;
+	height:80px;
+	bottom: 7.3%;
+	left: 24.7%;
+	position: absolute;
+	overflow: hidden;
+}
+.sleeveRight, .sleeveLeft{
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: 35%;
+}
+.sleeveRight{ 
+	right: 7%; 
+	-moz-transform: rotate(-18deg);
+	-webkit-transform: rotate(-18deg);
+	-o-transform: rotate(-18deg);
+	-ms-transform: rotate(-18deg); /* для IE9 */
+	transform: rotate(-18deg); /* на будущее */
+}
+.sleeveLeft{ 
+	left: 7%;
+	-moz-transform: rotate(18deg);
+	-webkit-transform: rotate(18deg);
+	-o-transform: rotate(18deg);
+	-ms-transform: rotate(18deg); /* для IE9 */
+	transform: rotate(18deg); /* на будущее */  
+}
