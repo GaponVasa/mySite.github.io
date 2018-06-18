@@ -24,9 +24,9 @@ body{
  width: 100%;
  min-width:1200px;
  margin: 0 auto;
- color:#000;
- background-color: #EAFFEB;
- overflow: scroll;
+ color:rgba(0, 0, 0, 0.5);/*a99114*/
+ background: #FFEA7C;/*колір бакгарунду всієї сторінки*/
+ overflow-y: scroll;
 }
 .main .container:before,
 .main .container:after,
@@ -148,25 +148,27 @@ body{
 #welcome h1{
 	font-size: 120px;
 	line-height: 1.2;
-	color: #A64E4C;
+	color: #A64E4C;/*Колір привітання*/
 }
 #welcome p{
 	margin: 10px 20px;
+	/*color:#a99114;*/
 }
 .nav{
 	width: 100%;
 	overflow: hidden;
-	margin: 20px 0px;
+	margin: 20px 0px 0px 0px;
 }
 .nav a{
 	display: block;
 	float: left;
-	width: 33%;
-	border: 1px solid #4CA652;
+	width: 33.2%;
+	border: 1px solid #9E5BB3;/*колірбордера навігації*/
+	background: #f7fda6;/*c6d22c */
 	font-size: 1.5em;
 	text-transform: uppercase;
 	text-align: center;
-	color: #4CA2A6;
+	color: #9ca614;/*f7fda6 */
 	padding: 20px 0px;
 }
 .nav a.en:nth-child(even), .nav a.uk:nth-child(odd){
@@ -174,7 +176,8 @@ body{
 	border-right: none;
 }
 .nav a:hover, a.active{
-	background-color: #cee2d3;
+	background: #9ca614;/*9ca614 */
+    color: #f7fda6;/*f7fda6 */
 }
 #about, #works, #contact{
 	display: none;
@@ -204,19 +207,11 @@ body{
 	line-height: 34px;
 	margin: 10px 0;
 }
-.column2 ul{
-	margin-left: 20px;
-}
-.column2 ul li{
-	list-style: disc;
-	margin: 10px 0px 0px 20px;
-}
-/*#works*/
 .work{
 	width: 26%;
 	height: 400px;
 	float: left;
-	border: 1px solid #4CA652;
+	border: 1px solid #9E5BB3;
 	padding: 20px 3%;
 	margin: 20px 20px 20px 0px; 
 }
@@ -227,9 +222,10 @@ div.work:nth-child(3n+3){
 	display: inline-block;
 	overflow: hidden;
 	height: inherit;
-	color: #AB4E81;
+	color: #a99114;
 }
 .work > a:hover{
+	color: #5D44A1;/*a694d6*/
 	text-decoration: underline;
 }
 .work > a > p{
