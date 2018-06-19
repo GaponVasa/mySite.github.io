@@ -2,10 +2,28 @@
 (function(){
 	var lastClickDiv;
 
-	function anim(){
+	function animWelcome(){
 		var heightWel = $('#welcome').height();
 		if(heightWel > 0){
 			$('#welcome').animate({height: '0px', opacity: 0}, 500);
+		}; 
+	};
+
+	function animLang(){
+		var heightWel = $('#lang').height();
+		var padding = parseInt($('#lang').css('padding-top'));
+		if(heightWel > 0){
+			console.log('animLang()')
+			$('#lang').animate({height: '0px', paddingTop: '0px', opacity: 0}, 500);
+		};
+	};
+
+	function animPaddingNav(){
+		var paddingNav = parseInt($('.container').css('padding-top'));
+		console.log('paddingNav ', paddingNav);
+		if(paddingNav > 0){
+			console.log('animPaddingNav()')
+			$('.container').animate({paddingTop: '0px'}, 500);
 		};
 	};
 
@@ -51,16 +69,22 @@
 		var targClass = $(target).attr('class').split(' ');
 		var classToString = targClass[0] + ' ' + targClass[1];
 		switch(targClass[0]){
-			case 'about': anim();
+			case 'about': animWelcome();
+				animLang();
+				animPaddingNav();
 				animIdDiv(targClass);
 				getSetLocalStorage('works', '0');
 			break;
-			case 'works': anim();
+			case 'works': animWelcome();
+				animLang();
+				animPaddingNav();
 				animIdDiv(targClass);
 				getSetLocalStorage('works', '1');
 				getSetLocalStorage('lastClick', classToString);
 			break;
-			case 'contact': anim();
+			case 'contact': animWelcome();
+				animLang();
+				animPaddingNav();
 				animIdDiv(targClass);
 				getSetLocalStorage('works', '0');
 			break;
@@ -73,17 +97,21 @@
     window.onkeydown = function(event){
     	console.log(event)
     	if(event.key === 'F5'){
+    		localStorage.clear();
     		window.onbeforeunload = function() {
     			localStorage.clear();
 		    };
     	}
     };
 
+
 	if(getSetLocalStorage('works') === '1'){
 		var stringTpClass = getSetLocalStorage('lastClick');
 		lastClickDiv = stringTpClass.split(' ');
 		changeLanguage(lastClickDiv[1]);
-		anim();
+		animWelcome();
+		animLang();
+		animPaddingNav();
 		animIdDiv('works');
 	};
 
