@@ -1,0 +1,13 @@
+.window .text{
+	font-family:monospace;
+    font-size: 45px;
+    line-height: 45px;
+}
+.border-2{
+	border: 2px solid black;
+	border-radius: 5px;
+}
+.window{
+	overflow: hidden;
+}
+button{cursor: pointer;}

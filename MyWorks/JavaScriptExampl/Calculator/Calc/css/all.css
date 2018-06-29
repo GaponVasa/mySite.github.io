@@ -1,0 +1,92 @@
+/* reset css */
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, form, fieldset, blockquote {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th, caption { font-weight: normal; text-align: left; }
+img, fieldset { border: 0; }
+ol { list-style: decimal; }
+ul { list-style:none; }
+a{text-decoration: none;}
+q:before, q:after { content:''; }
+*:focus {
+    outline: none;
+}
+/* end reset */
+/*----------------------------Font name-----------------------------*/
+	/*font: px georgia, serif;
+	font: px "times new roman", times, serif;
+	font: px arial, helvetica, sans-serif;
+	font: px tahoma, geneva, sans-serif;
+	font: px "trebuchet ms", helvetica, sans-serif;
+	font: px verdana, geneva, sans-serif;
+	font: px "ms serif", "new york", serif;
+	font: px "arial black", gadget, sans-serif;
+	font: px "lucida sans", unicode, "lucida grande", sans-serif;*/
+
+
+/*---------------------------start---------------------------------*/
+html{
+	height:100%;
+	background:#fff;
+}
+body{
+	font:10px/10px Arial, Helvetica, sans-serif;
+	min-height:100%;
+	width: 370px;
+	margin: 0 auto;
+	color:#000;
+}
+
+
+/*-----------------------------MAIN-------------------------------*/
+.main{
+	width: 100%;
+	margin: 0 auto;
+}
+.main .container{
+	margin: 50px auto;
+}
+.calc{
+	width: 349px;
+	border: 2px solid black;
+	padding: 5px;
+	background-color: #E1E1E1;
+	text-align: end;
+}
+.calc .window{
+	overflow: hidden;
+}
+.window .text{
+	width: 99%;
+	font-family:monospace;
+    font-size: 45px;
+    line-height: 45px;
+}
+.calc .buttons, .calc .buttonsActive{
+	overflow: hidden;
+}
+.calc .buttons button, .calc .buttonsActive button{
+	width:80px;
+	height: 40px;
+	margin: 5px 5px 5px 0px;
+	padding: 3px;
+	font-size: 20px;
+	line-height: 20px;
+	background-color: #fff;
+	border: 2px solid #fff;
+	border: none;
+	cursor: pointer;
+}
+.calc .buttons button:hover, .calc .buttonsActive button:active{
+	background-color: #E1E1E1;
+	border: 2px solid #AAA;
+}
+
+.calc :nth-child(2n) button{
+	margin: 5px 5px 5px 3px;
+	float: right;
+}
