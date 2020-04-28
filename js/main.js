@@ -11,18 +11,14 @@
 
 	function animLang(){
 		var heightWel = $('#lang').height();
-		var padding = parseInt($('#lang').css('padding-top'));
 		if(heightWel > 0){
-			console.log('animLang()')
 			$('#lang').animate({height: '0px', paddingTop: '0px', opacity: 0}, 500);
 		};
 	};
 
 	function animPaddingNav(){
 		var paddingNav = parseInt($('.container').css('padding-top'));
-		console.log('paddingNav ', paddingNav);
 		if(paddingNav > 0){
-			console.log('animPaddingNav()')
 			$('.container').animate({paddingTop: '0px'}, 500);
 		};
 	};
@@ -64,29 +60,28 @@
 		}
 	}
 
+	function inner_logical(tClass, name, str){
+		animWelcome();
+		animLang();
+		animPaddingNav();
+		animIdDiv(tClass);
+		getSetLocalStorage(name, str);
+	}
+
 	$('.nav').on('click', function(event){
 		var target = event.target;
 		var targClass = $(target).attr('class').split(' ');
 		var classToString = targClass[0] + ' ' + targClass[1];
 		switch(targClass[0]){
-			case 'about': animWelcome();
-				animLang();
-				animPaddingNav();
-				animIdDiv(targClass);
-				getSetLocalStorage('works', '0');
+			case 'about': 
+						inner_logical(targClass, 'works', '0');
 			break;
-			case 'works': animWelcome();
-				animLang();
-				animPaddingNav();
-				animIdDiv(targClass);
-				getSetLocalStorage('works', '1');
-				getSetLocalStorage('lastClick', classToString);
+			case 'works': 
+						inner_logical(targClass, 'works', '1');
+						getSetLocalStorage('lastClick', classToString);
 			break;
-			case 'contact': animWelcome();
-				animLang();
-				animPaddingNav();
-				animIdDiv(targClass);
-				getSetLocalStorage('works', '0');
+			case 'contact': 
+						inner_logical(targClass, 'works', '0');
 			break;
 		};
 		lastClickDiv = targClass;
@@ -95,7 +90,6 @@
 	$('.onoffswitch-label').on('click', changeLanguageButton);
 
     window.onkeydown = function(event){
-    	console.log(event)
     	if(event.key === 'F5'){
     		localStorage.clear();
     		window.onbeforeunload = function() {
@@ -115,5 +109,4 @@
 		animIdDiv('works');
 	};
 
-	
 }());
